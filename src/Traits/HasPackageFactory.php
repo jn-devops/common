@@ -2,12 +2,12 @@
 
 namespace Homeful\Common\Traits;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory as BaseHasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Str;
 
-trait HasFactory
+trait HasPackageFactory
 {
-    use BaseHasFactory;
+    use HasFactory;
 
     protected static function newFactory()
     {

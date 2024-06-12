@@ -37,11 +37,11 @@ php artisan vendor:publish --tag="common-views"
 ## Usage
 
 ```php
-use Homeful\Common\Traits\HasFactory;
+use Homeful\Common\Traits\HasPackageFactory;
 
 class HomefulModel extends Model
 {
-    use HasFactory;
+    use HasPackageFactory;
 ```
 
 ## Testing
