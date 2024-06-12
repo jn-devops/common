@@ -37,7 +37,10 @@
         "psr-4": {
             "Homeful\\Common\\": "src/",
             "Homeful\\Common\\Database\\Factories\\": "database/factories/"
-        }
+        },
+        "files": [
+            "src/Helpers/Utils.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
