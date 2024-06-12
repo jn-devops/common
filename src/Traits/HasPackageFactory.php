@@ -15,6 +15,6 @@ trait HasPackageFactory
         $modelName = Str::after(get_called_class(), 'Models\\');
         $path = $package. 'Database\\Factories\\' . $modelName . 'Factory';
 
-        return new $path;
+        return app($path)->new();
     }
 }
