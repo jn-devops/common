@@ -2,9 +2,9 @@
 
 namespace Homeful\Common;
 
+use Homeful\Common\Commands\CommonCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Homeful\Common\Commands\CommonCommand;
 
 class CommonServiceProvider extends PackageServiceProvider
 {
