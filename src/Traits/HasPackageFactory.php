@@ -3,7 +3,6 @@
 namespace Homeful\Common\Traits;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Support\Str;
 
 trait HasPackageFactory
 {
@@ -11,10 +10,11 @@ trait HasPackageFactory
 
     protected static function newFactory()
     {
-        $package = Str::before(get_called_class(), 'Models\\');
-        $modelName = Str::after(get_called_class(), 'Models\\');
-        $path = $package.'Database\\Factories\\'.$modelName.'Factory';
+        $path = str(get_called_class())->explode('\\');
+        $package = $path[0];
+        $domain = $path[1];
+        $model = $path->last();
 
-        return app($path)->new();
+        return app(__(':package\:domain\Database\Factories\:modelFactory', compact('package','domain', 'model')))->new();
     }
 }
