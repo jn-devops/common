@@ -2,8 +2,8 @@
 
 namespace Homeful\Common\Traits;
 
-use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Illuminate\Database\Eloquent\Builder;
+use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 
 trait HasMeta
 {
@@ -13,7 +13,7 @@ trait HasMeta
     {
         $this->mergeFillable(['meta']);
         $this->mergeCasts([
-            'meta' => SchemalessAttributes::class
+            'meta' => SchemalessAttributes::class,
         ]);
         $this->setHidden(array_merge($this->getHidden(), ['meta']));
     }

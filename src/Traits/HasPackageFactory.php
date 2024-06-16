@@ -15,6 +15,6 @@ trait HasPackageFactory
         $domain = $path[1];
         $model = $path->last();
 
-        return app(__(':package\:domain\Database\Factories\:modelFactory', compact('package','domain', 'model')))->new();
+        return app(__(':package\:domain\Database\Factories\:modelFactory', compact('package', 'domain', 'model')))->new();
     }
 }
