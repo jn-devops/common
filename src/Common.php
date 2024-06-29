@@ -2,6 +2,4 @@
 
 namespace Homeful\Common;
 
-class Common
-{
-}
+class Common {}
