@@ -19,5 +19,5 @@ interface BorrowerInterface
 
     public function getSellerCommissionCode(): string;
 
-    function getGrossMonthlyIncome(): Price;
+    public function getGrossMonthlyIncome(): Price;
 }
