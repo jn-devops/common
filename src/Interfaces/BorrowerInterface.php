@@ -5,6 +5,7 @@ namespace Homeful\Common\Interfaces;
 use Brick\Money\Money;
 use Illuminate\Support\Carbon;
 use Propaganistas\LaravelPhone\PhoneNumber;
+use Whitecube\Price\Price;
 
 interface BorrowerInterface
 {
@@ -17,4 +18,6 @@ interface BorrowerInterface
     public function getMobile(): PhoneNumber;
 
     public function getSellerCommissionCode(): string;
+
+    function getGrossMonthlyIncome(): Price;
 }
