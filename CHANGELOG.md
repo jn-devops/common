@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.2.3 - 2024-08-05
+
+add getContactId() to BorrowerInterface
+
 ## #v1.2.2 - 2024-07-16
 
 added getGrossMonthlyIncome in BorrowerInterface
