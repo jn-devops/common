@@ -9,6 +9,8 @@ use Whitecube\Price\Price;
 
 interface BorrowerInterface
 {
+    public function getContactId(): string;
+
     public function getBirthdate(): Carbon;
 
     public function getWages(): Money|float;
