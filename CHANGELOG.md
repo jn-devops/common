@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.2.4 - 2024-08-06
+
+add input and assert
+
 ## #v1.2.3 - 2024-08-05
 
 add getContactId() to BorrowerInterface
