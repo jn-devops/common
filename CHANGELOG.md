@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.2.5 - 2024-08-27
+
+add input seller commission code
+
 ## #v1.2.4 - 2024-08-06
 
 add input and assert
