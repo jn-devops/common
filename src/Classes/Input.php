@@ -25,4 +25,6 @@ class Input
     const PARTIAL_MISCELLANEOUS_FEES = 'partial_miscellaneous_fees';
 
     const DOWN_PAYMENT = 'down_payment';
+
+    const SELLER_COMMISSION_CODE = 'seller_commission_code';
 }
