@@ -2,9 +2,9 @@
 
 namespace Homeful\Common;
 
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Homeful\Common\Commands\CommonCommand;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class CommonServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +17,6 @@ class CommonServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('common')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_common_table')
             ->hasCommand(CommonCommand::class);
     }
 }

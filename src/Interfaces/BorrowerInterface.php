@@ -2,10 +2,10 @@
 
 namespace Homeful\Common\Interfaces;
 
-use Brick\Money\Money;
-use Illuminate\Support\Carbon;
 use Propaganistas\LaravelPhone\PhoneNumber;
+use Illuminate\Support\Carbon;
 use Whitecube\Price\Price;
+use Brick\Money\Money;
 
 interface BorrowerInterface
 {

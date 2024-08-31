@@ -2,10 +2,10 @@
 
 namespace Homeful\Common\Casts;
 
-use Brick\Money\Money;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Database\Eloquent\Model;
 use Whitecube\Price\Price;
+use Brick\Money\Money;
 
 class PriceCast implements CastsAttributes
 {

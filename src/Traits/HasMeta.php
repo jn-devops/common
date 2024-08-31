@@ -2,8 +2,8 @@
 
 namespace Homeful\Common\Traits;
 
-use Illuminate\Database\Eloquent\Builder;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
+use Illuminate\Database\Eloquent\Builder;
 
 trait HasMeta
 {
