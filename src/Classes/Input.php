@@ -4,6 +4,7 @@ namespace Homeful\Common\Classes;
 
 class Input
 {
+    const SKU = 'sku';
     const WAGES = 'wages';
 
     const TCP = 'total_contract_price';
@@ -27,4 +28,5 @@ class Input
     const DOWN_PAYMENT = 'down_payment';
 
     const SELLER_COMMISSION_CODE = 'seller_commission_code';
+    const PROMO_CODE = 'promo_code';
 }
