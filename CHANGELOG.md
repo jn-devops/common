@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.2.7 - 2024-09-15
+
+add sku and promo_code inputs
+
 ## #v1.2.6 - 2024-08-31
 
 fix styling
