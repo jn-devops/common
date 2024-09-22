@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.2.8 - 2024-09-22
+
+add formatted_age in utils
+
 ## #v1.2.7 - 2024-09-15
 
 add sku and promo_code inputs
