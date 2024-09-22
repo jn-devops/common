@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 if (! function_exists('documents_path')) {
     function documents_path(?string $path = null): string
     {
@@ -8,3 +10,38 @@ if (! function_exists('documents_path')) {
         return $documents_path.($path ? '/'.$path : '');
     }
 }
+
+if (! function_exists('formatted_age')) {
+    /**
+     * Display age in format:
+     * '%y years, %m months and %d days old'
+     * '%y years and %m months old'
+     * '%m years and %d days old'
+     *
+     * @param \DateTime $born
+     * @param DateTime|null $reference
+     * @return string
+     *
+     */
+    function formatted_age(DateTime $born, DateTime $reference = null): string
+    {
+        $reference = $reference ?: new DateTime;
+
+        if ($born > $reference)
+            throw new \InvalidArgumentException('Provided birthday cannot be in future compared to the reference date.');
+
+        $diff = $reference->diff($born);
+
+        // Not very readable, but all it does is joining age
+        // parts using either ',' or 'and' appropriately
+
+        $age = ($d = $diff->d) ? ' and '.$d.' '. Str::plural('day', $d) : '';
+        $age = ($m = $diff->m) ? ($age ? ', ' : ' and ').$m.' '. Str::plural('month', $m) . $age : $age;
+        $age = ($y = $diff->y) ? $y.' '. Str::plural('year', $y) . $age  : $age;
+
+        // trim redundant ',' or 'and' parts
+        return ($s = trim(trim($age, ', '), ' and ')) ? $s.' old' : 'newborn';
+    }
+}
+
+
