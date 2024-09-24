@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.2.10 - 2024-09-24
+
+append Assert class
+
 ## #v1.2.9 - 2024-09-24
 
 add Amount class
