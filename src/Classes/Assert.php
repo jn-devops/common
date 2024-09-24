@@ -31,4 +31,12 @@ class Assert
     const MAXIMUM_PAYMENT_FROM_MONTHLY_INCOME = 'maximum_payment_from_monthly_income';
 
     const LOAN_DIFFERENCE = 'loan_difference';
+
+    const MARKET_SEGMENT = 'market_segment';
+
+    const LOANABLE_VALUE_MULTIPLIER = 'loanable_value_multiplier';
+
+    const LOANABLE_VALUE = 'loanable_value';
+
+    const INTEREST_RATE = 'interest_rate';
 }
