@@ -42,4 +42,8 @@ class Input
     const WORK_AREA = 'work_area';
 
     const PRICE_CEILING = 'price_ceiling';
+
+    const STOREYS = 'storeys';
+
+    const FLOOR_AREA = 'floor_area';
 }
