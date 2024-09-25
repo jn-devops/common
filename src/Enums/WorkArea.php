@@ -20,4 +20,9 @@ enum WorkArea
     {
         return $value ? self::REGION : self::HUC;
     }
+
+    public static function default(): self
+    {
+        return WorkArea::HUC;
+    }
 }
