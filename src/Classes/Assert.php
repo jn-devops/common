@@ -39,4 +39,18 @@ class Assert
     const LOANABLE_VALUE = 'loanable_value';
 
     const INTEREST_RATE = 'interest_rate';
+
+    const PRICE_CEILING = 'price_ceiling';
+
+    const REPRICING_FREQUENCY = 'repricing_frequency';
+
+    const LOAN_TO_COLLATERAL_RATIO = 'loan_to_collateral_ratio';
+
+    const MAXIMUM_TERM_ALLOWED = 'maximum_term_allowed';
+
+    const PRINCIPAL_AND_INTEREST = 'principal_and_interest';
+
+    const MRI_SRI = 'mri_sri';
+
+    const NON_LIFE_INSURANCE = 'non_life_insurance';
 }
