@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.2.15 - 2024-09-25
+
+add storeys and floor_area to input class
+
 ## #v1.2.13 - 2024-09-25
 
 transfer WorkArea enum here
