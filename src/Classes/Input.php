@@ -28,5 +28,18 @@ class Input
     const DOWN_PAYMENT = 'down_payment';
 
     const SELLER_COMMISSION_CODE = 'seller_commission_code';
+
     const PROMO_CODE = 'promo_code';
+
+    const DEVELOPMENT_TYPE = 'development_type';
+
+    const PROGRAM_TYPE = 'program_type';
+
+    const MARKET_SEGMENT = 'market_segment';
+
+    const HOUSING_TYPE = 'housing_type';
+
+    const WORK_AREA = 'work_area';
+
+    const PRICE_CEILING = 'price_ceiling';
 }
