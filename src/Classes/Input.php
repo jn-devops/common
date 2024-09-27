@@ -46,4 +46,6 @@ class Input
     const STOREYS = 'storeys';
 
     const FLOOR_AREA = 'floor_area';
+
+    const REPRICING_FREQUENCY = 'repricing_frequency';
 }
