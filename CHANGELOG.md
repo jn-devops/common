@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.3.1 - 2024-09-27
+
+add REPRICING_FREQUENCY to Input
+
 ## #v1.2.15 - 2024-09-25
 
 add storeys and floor_area to input class
