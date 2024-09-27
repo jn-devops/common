@@ -1,5 +1,6 @@
 <?php
 
+use Homeful\Common\Classes\DocStamps;
 use Illuminate\Support\Str;
 
 if (! function_exists('documents_path')) {
@@ -41,6 +42,13 @@ if (! function_exists('formatted_age')) {
 
         // trim redundant ',' or 'and' parts
         return ($s = trim(trim($age, ', '), ' and ')) ? $s.' old' : 'newborn';
+    }
+}
+
+if (! function_exists('doc_stamps')) {
+    function doc_stamps(mixed $value): float
+    {
+        return (new DocStamps($value))->getPrice()->inclusive()->getAmount()->toFloat();
     }
 }
 
