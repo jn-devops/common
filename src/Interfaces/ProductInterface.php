@@ -2,12 +2,10 @@
 
 namespace Homeful\Common\Interfaces;
 
+use phpDocumentor\Reflection\Types\Integer;
 use Whitecube\Price\Price;
 
-/**
- * @deprecated
- */
-interface PropertyInterface
+interface ProductInterface
 {
     public function getSKU(): string;
 
@@ -16,4 +14,10 @@ interface PropertyInterface
     public function getTotalContractPrice(): Price;
 
     public function getAppraisedValue(): Price;
+
+    public function getPercentDownPayment(): float;
+
+    public function getDownPaymentTerm(): int;
+
+    public function getPercentMiscellaneousFees(): float;
 }
