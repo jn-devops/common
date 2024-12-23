@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.3.2 - 2024-12-23
+
+add product interface
+
 ## #v1.3.1 - 2024-09-27
 
 add REPRICING_FREQUENCY to Input
