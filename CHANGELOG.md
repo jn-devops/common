@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.3.3 - 2025-01-02
+
+add enum utils trait
+
 ## #v1.3.2 - 2024-12-23
 
 add product interface
