@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.3.4 - 2025-01-05
+
+add options type
+
 ## #v1.3.3 - 2025-01-02
 
 add enum utils trait
