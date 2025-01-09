@@ -24,7 +24,7 @@ if (! function_exists('formatted_age')) {
      * @return string
      *
      */
-    function formatted_age(DateTime $born, DateTime $reference = null): string
+    function formatted_age(DateTime $born, ?DateTime $reference = null): string
     {
         $reference = $reference ?: new DateTime;
 
