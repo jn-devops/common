@@ -52,4 +52,19 @@ if (! function_exists('doc_stamps')) {
     }
 }
 
+if (!function_exists('filter_trim_recursive_array')) {
+    function filter_trim_recursive_array($array = []): array
+    {
+        $callback = function ($item) {
+            if (is_array($item)) {
+                return filter_trim_recursive_array($item);
+            } elseif (is_string($item)) {
+                return trim($item);
+            }
+            return $item;
+        };
 
+        $array = array_map($callback, $array);
+        return array_filter($array);
+    }
+}
