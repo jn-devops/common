@@ -68,3 +68,14 @@ if (!function_exists('filter_trim_recursive_array')) {
         return array_filter($array);
     }
 }
+
+if (!function_exists('dot_shift')) {
+    function dot_shift(&$dot_notation): string
+    {
+        $parts = explode('.', $dot_notation, 2); // Split into two parts
+        $dot_notation = $parts[1] ?? ''; // Update to remaining part or empty
+
+        return $parts[0]; // Return the first element
+    }
+}
+
