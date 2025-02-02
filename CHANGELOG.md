@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.3.7 - 2025-02-02
+
+add dot_shift utility
+
 ## #v1.3.6 - 2025-01-26
 
 add filter_trim_recursive_array to utils
