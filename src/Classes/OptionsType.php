@@ -25,7 +25,14 @@ abstract class OptionsType implements JsonSerializable
      *
      * @var string
      */
-    public string $description;
+    public string $description = '';
+
+    /**
+     * The details of the type.
+     *
+     * @var array
+     */
+    public array $details = [];
 
     /**
      * The enumeration class name.
@@ -61,6 +68,19 @@ abstract class OptionsType implements JsonSerializable
     }
 
     /**
+     * Detail the type.
+     *
+     * @param array $details
+     * @return $this
+     */
+    public function details(array $details): static
+    {
+        $this->details = $details;
+
+        return $this;
+    }
+
+    /**
      * Get the JSON serializable representation of the object.
      *
      * @return array
@@ -71,8 +91,18 @@ abstract class OptionsType implements JsonSerializable
             'key' => $this->key,
             'name' => __($this->name),
             'description' => __($this->description),
+            'details' => array_map(fn($detail) => is_string($detail) ? __($detail) : $detail, $this->details ?? [])
         ];
     }
+//    public function jsonSerialize(): array
+//    {
+//        return [
+//            'key' => $this->key,
+//            'name' => __($this->name),
+//            'description' => __($this->description),
+//            'details' => $this->details
+//        ];
+//    }
 
     /**
      * @return string
