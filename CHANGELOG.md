@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.3.9 - 2025-02-05
+
+add titleCase to utils
+
 ## #v1.3.8 - 2025-02-03
 
 add details to options type
