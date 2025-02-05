@@ -80,14 +80,20 @@ if (!function_exists('dot_shift')) {
 }
 
 if (!function_exists('titleCase')) {
-    function titleCase(string $text = '', array $exclusions = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']): string
+    function titleCase(?string $text, array $exclusions = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']): string
     {
+        if (empty($text)) {
+            return '';
+        }
+
         $titleCased = Str::title($text);
 
         // Restore the Roman numerals to their original case
-        return preg_replace_callback('/\b(' . implode('|', $exclusions) . ')\b/i', function ($matches) {
-            return strtoupper($matches[0]);
-        }, $titleCased);
+        return preg_replace_callback(
+            '/\b(' . implode('|', $exclusions) . ')\b/i',
+            fn($matches) => strtoupper($matches[0]),
+            $titleCased
+        );
     }
 }
 
