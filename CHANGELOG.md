@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.4.1 - 2025-02-05
+
+fix titleCase again
+
 ## #v1.4.0 - 2025-02-05
 
 fix titleCase to accept null
