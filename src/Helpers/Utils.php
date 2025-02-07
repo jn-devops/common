@@ -97,4 +97,20 @@ if (!function_exists('titleCase')) {
     }
 }
 
+if (!function_exists('validateJson')) {
+    function validateJson(string $json): bool
+    {
+        return filter_var(
+            $json,
+            FILTER_CALLBACK,
+            ['options' => function ($value) {
+                if (!is_string($value) || trim($value) === '') {
+                    return false; // Ensure it's a non-empty string before validation
+                }
 
+                json_decode($value);
+                return json_last_error() === JSON_ERROR_NONE;
+            }]
+        );
+    }
+}

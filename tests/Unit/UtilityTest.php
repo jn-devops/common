@@ -36,3 +36,10 @@ test('doc stamps has price range', function (array $params) {
     expect($ds->getPrice()->inclusive()->compareTo($params['guess_price']))->toBe(Amount::EQUAL);
     expect(doc_stamps($params['value']))->toBe($params['guess_price']);
 })->with('doc stamps');
+
+test('validate json works', function () {
+    $jsonString = '{"name": "John", "age": 30}';
+    expect(validateJson($jsonString))->toBeTrue();
+    $jsonString = '{"name": "John", xxxxx}';
+    expect(validateJson($jsonString))->toBeFalse();
+});
