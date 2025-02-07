@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.4.3 - 2025-02-07
+
+update upload file use static functions
+
 ## #v1.4.2 - 2025-02-07
 
 add UploadFile enumeration
