@@ -12,11 +12,8 @@ it('correctly derives collection names from attributes', function () {
         'codeFileCode' => 'code_file-codes',
     ];
 
-    foreach (array_keys($mediaAttributes) as $attribute) {
-        $suffixEnum = UploadFile::fromAttribute($attribute);
-        $expectedCollectionName = $mediaAttributes[$attribute];
-
-        expect($suffixEnum->deriveCollectionNameFromAttribute($attribute))
+    foreach ($mediaAttributes as $attribute => $expectedCollectionName) {
+        expect(UploadFile::deriveCollectionNameFromAttribute($attribute))
             ->toBe($expectedCollectionName);
     }
 });
@@ -31,9 +28,7 @@ it('correctly derives attributes from collection names', function () {
         'codeFileCode' => 'code_file-codes',
     ];
 
-    foreach (array_values($mediaAttributes) as $collectionName) {
-        $expectedAttribute = array_search($collectionName, $mediaAttributes);
-
+    foreach ($mediaAttributes as $expectedAttribute => $collectionName) {
         expect(UploadFile::deriveAttributeFromCollectionName($collectionName))
             ->toBe($expectedAttribute);
     }
