@@ -1,5 +1,6 @@
 <?php
 
+use Spatie\LaravelData\{DataCollection, Optional};
 use Homeful\Common\Classes\DocStamps;
 use Illuminate\Support\Str;
 
@@ -114,3 +115,20 @@ if (!function_exists('validateJson')) {
         );
     }
 }
+
+if (!function_exists('resolveOptionalCollection')) {
+    /**
+     * Resolves an optional Spatie DataCollection.
+     * Converts the DataCollection to an Eloquent collection if present, otherwise returns an empty collection.
+     *
+     * @param DataCollection|Optional|null $collection The collection to resolve.
+     * @return \Illuminate\Support\Collection The resolved collection or an empty collection.
+     */
+    function resolveOptionalCollection(DataCollection|Optional|null $collection): \Illuminate\Support\Collection
+    {
+        return $collection && !($collection instanceof Optional)
+            ? $collection->toCollection()
+            : collect();
+    }
+}
+

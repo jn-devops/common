@@ -1,5 +1,6 @@
 <?php
 
+use Spatie\LaravelData\{DataCollection, Optional};
 use Homeful\Common\Classes\DocStamps;
 use Homeful\Common\Enums\WorkArea;
 use Homeful\Common\Classes\Amount;
@@ -42,4 +43,11 @@ test('validate json works', function () {
     expect(validateJson($jsonString))->toBeTrue();
     $jsonString = '{"name": "John", xxxxx}';
     expect(validateJson($jsonString))->toBeFalse();
+});
+
+test('resolveOptionalCollection works', function () {
+    $result = resolveOptionalCollection(null);
+    expect($result)->toBeCollection()->toBeEmpty();
+    $result = resolveOptionalCollection(Optional::create());
+    expect($result)->toBeCollection()->toBeEmpty();
 });
