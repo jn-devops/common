@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.4.5 - 2025-02-08
+
+add resolveOptionalCollection helper function
+
 ## #v1.4.4 - 2025-02-07
 
 add validate json
