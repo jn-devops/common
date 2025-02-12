@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.4.6 - 2025-02-12
+
+add has domain notification trait
+
 ## #v1.4.5 - 2025-02-08
 
 add resolveOptionalCollection helper function
