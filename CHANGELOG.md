@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.4.9 - 2025-02-15
+
+transfer amount collection item and add-on fee to payment to common
+
 ## #v1.4.8 - 2025-02-15
 
 add ADD_ON_FEES_TO_LOAN_AMORTIZATION in assert
