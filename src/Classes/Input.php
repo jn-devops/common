@@ -50,5 +50,8 @@ class Input
     const REPRICING_FREQUENCY = 'repricing_frequency';
 
     const MORTGAGE_REDEMPTION_INSURANCE = 'mortgage_redemption_insurance';
+
     const ANNUAL_FIRE_INSURANCE = 'annual_fire_insurance';
+
+    const INCOME_REQUIREMENT_MULTIPLIER = 'income_requirement_multiplier';
 }
