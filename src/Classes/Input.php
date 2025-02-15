@@ -48,4 +48,7 @@ class Input
     const FLOOR_AREA = 'floor_area';
 
     const REPRICING_FREQUENCY = 'repricing_frequency';
+
+    const MORTGAGE_REDEMPTION_INSURANCE = 'mortgage_redemption_insurance';
+    const ANNUAL_FIRE_INSURANCE = 'annual_fire_insurance';
 }
