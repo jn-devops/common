@@ -12,6 +12,8 @@ class Assert
 
     const CASH_OUT = 'guess_cash_out_amount';
 
+    const ADD_ON_FEES_TO_LOAN_AMORTIZATION = 'add_on_fees_to_loan_amortization';
+
     const BALANCE_CASH_OUT = 'guess_balance_cash_out_amount';
 
     const LOAN_AMORTIZATION = 'guess_loan_amortization_amount';
