@@ -24,7 +24,7 @@ class Assert
 
     const GROSS_MONTHLY_INCOME = 'guess_gross_monthly_income';
 
-    const INCOME_REQUIREMENT_MULTIPLIER = 'income_requirement_multiplier';
+    const INCOME_REQUIREMENT_MULTIPLIER = 'guess_income_requirement_multiplier';
 
     const INCOME_REQUIREMENT = 'income_requirement';
 
