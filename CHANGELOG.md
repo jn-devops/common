@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.4.93 - 2025-02-17
+
+add processing fee and reservation fee to input
+
 ## #v1.4.92 - 2025-02-16
 
 update assert guess_income_requirement_multiplier
