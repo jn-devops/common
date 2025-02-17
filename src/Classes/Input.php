@@ -5,6 +5,7 @@ namespace Homeful\Common\Classes;
 class Input
 {
     const SKU = 'sku';
+
     const WAGES = 'wages';
 
     const TCP = 'total_contract_price';
@@ -18,6 +19,10 @@ class Input
     const PERCENT_MF = 'percent_miscellaneous_fees';
 
     const CONSULTING_FEE = 'consulting_fee';
+
+    const PROCESSING_FEE = 'processing_fee';
+
+    const RESERVATION_FEE = 'reservation_fee';
 
     const DP_TERM = 'down_payment_term';
 
