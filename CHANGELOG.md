@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.1 - 2025-02-21
+
+add class property to AmountCollectionItem
+
 ## #v1.5.0 - 2025-02-21
 
 add deductible fees from payment
