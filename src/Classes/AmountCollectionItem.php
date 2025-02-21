@@ -22,7 +22,7 @@ abstract class AmountCollectionItem
      * @param bool $deductible
      * @param string|null $tag
      */
-    public function __construct(string $name, Price|float $amount, bool $deductible = false, ?string $tag = null)
+    public function __construct(string $name, Price|float $amount, bool $deductible, ?string $tag = null)
     {
         $this->setName($name)->setAmount($amount)->setDeductible($deductible)->setTag($tag);
     }
