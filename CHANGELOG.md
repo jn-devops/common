@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.2 - 2025-02-21
+
+rename class to tag
+
 ## #v1.5.1 - 2025-02-21
 
 add class property to AmountCollectionItem
