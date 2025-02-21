@@ -14,17 +14,17 @@ abstract class AmountCollectionItem
 
     protected bool $deductible;
 
-    protected string $class;
+    protected string $tag;
 
     /**
      * @param string $name
      * @param Price|float $amount
      * @param bool $deductible
-     * @param string|null $class
+     * @param string|null $tag
      */
-    public function __construct(string $name, Price|float $amount, bool $deductible = false, ?string $class = null)
+    public function __construct(string $name, Price|float $amount, bool $deductible = false, ?string $tag = null)
     {
-        $this->setName($name)->setAmount($amount)->setDeductible($deductible)->setClass($class);
+        $this->setName($name)->setAmount($amount)->setDeductible($deductible)->setTag($tag);
     }
 
     public function getName(): string
@@ -64,14 +64,14 @@ abstract class AmountCollectionItem
     }
 
 
-    public function getClass(): string
+    public function getTag(): string
     {
-        return $this->class ?? '';
+        return $this->tag ?? '';
     }
 
-    public function setClass(?string $class): static
+    public function setTag(?string $tag): static
     {
-        $this->class = $class ?? '';
+        $this->tag = $tag ?? '';
 
         return $this;
     }
