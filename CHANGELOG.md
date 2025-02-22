@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.3 - 2025-02-21
+
+re-arrange arguments for amount collection item children
+
 ## #v1.5.2 - 2025-02-21
 
 rename class to tag
