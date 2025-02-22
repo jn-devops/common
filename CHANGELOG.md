@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.4 - 2025-02-22
+
+add array_when function, add assert balance down payment
+
 ## #v1.5.3 - 2025-02-21
 
 re-arrange arguments for amount collection item children
