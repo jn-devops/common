@@ -132,3 +132,25 @@ if (!function_exists('resolveOptionalCollection')) {
     }
 }
 
+/**
+ * Conditionally transform an array.
+ *
+ * @param array    $array    The array to transform.
+ * @param mixed    $condition If truthy, the callback will be executed.
+ * @param callable $callback  The transformation callback that receives the array.
+ *
+ * @return array The transformed array if condition is truthy, otherwise the original array.
+ */
+
+if (!function_exists('array_when')) {
+    function array_when(array $array, $condition, callable $callback): array {
+        return $condition ? $callback($array) : $array;
+    }
+
+// Usage:
+    $array = [1, 2, 3];
+    $result = array_when($array, false, function ($arr) {
+        return array_map(fn($item) => $item * 2, $arr);
+    });
+// $result remains [1, 2, 3]
+}

@@ -12,7 +12,7 @@ class Assert
 
     const CASH_OUT = 'guess_cash_out_amount';
 
-    const ADD_ON_FEES_TO_LOAN_AMORTIZATION = 'add_on_fees_to_loan_amortization';
+    const ADD_ON_FEES_TO_LOAN_AMORTIZATION = 'guess_add_on_fees_to_loan_amortization';
 
     const BALANCE_CASH_OUT = 'guess_balance_cash_out_amount';
 
@@ -20,39 +20,41 @@ class Assert
 
     const DOWN_PAYMENT = 'guess_down_payment_amount';
 
+    const BALANCE_DOWN_PAYMENT = 'guess_balance_down_payment_amount';
+
     const DOWN_PAYMENT_AMORTIZATION = 'guess_dp_amortization_amount';
 
     const GROSS_MONTHLY_INCOME = 'guess_gross_monthly_income';
 
     const INCOME_REQUIREMENT_MULTIPLIER = 'guess_income_requirement_multiplier';
 
-    const INCOME_REQUIREMENT = 'income_requirement';
+    const INCOME_REQUIREMENT = 'guess_income_requirement';
 
-    const JOINT_DISPOSABLE_MONTHLY_INCOME = 'joint_disposable_monthly_income';
+    const JOINT_DISPOSABLE_MONTHLY_INCOME = 'guess_joint_disposable_monthly_income';
 
-    const MAXIMUM_PAYMENT_FROM_MONTHLY_INCOME = 'maximum_payment_from_monthly_income';
+    const MAXIMUM_PAYMENT_FROM_MONTHLY_INCOME = 'guess_maximum_payment_from_monthly_income';
 
-    const LOAN_DIFFERENCE = 'loan_difference';
+    const LOAN_DIFFERENCE = 'guess_loan_difference';
 
-    const MARKET_SEGMENT = 'market_segment';
+    const MARKET_SEGMENT = 'guess_market_segment';
 
-    const LOANABLE_VALUE_MULTIPLIER = 'loanable_value_multiplier';
+    const LOANABLE_VALUE_MULTIPLIER = 'guess_loanable_value_multiplier';
 
-    const LOANABLE_VALUE = 'loanable_value';
+    const LOANABLE_VALUE = 'guess_loanable_value';
 
-    const INTEREST_RATE = 'interest_rate';
+    const INTEREST_RATE = 'guess_interest_rate';
 
-    const PRICE_CEILING = 'price_ceiling';
+    const PRICE_CEILING = 'guess_price_ceiling';
 
-    const REPRICING_FREQUENCY = 'repricing_frequency';
+    const REPRICING_FREQUENCY = 'guess_repricing_frequency';
 
-    const LOAN_TO_COLLATERAL_RATIO = 'loan_to_collateral_ratio';
+    const LOAN_TO_COLLATERAL_RATIO = 'guess_loan_to_collateral_ratio';
 
-    const MAXIMUM_TERM_ALLOWED = 'maximum_term_allowed';
+    const MAXIMUM_TERM_ALLOWED = 'guess_maximum_term_allowed';
 
-    const PRINCIPAL_AND_INTEREST = 'principal_and_interest';
+    const PRINCIPAL_AND_INTEREST = 'guess_principal_and_interest';
 
-    const MRI_SRI = 'mri_sri';
+    const MRI_SRI = 'guess_mri_sri';
 
-    const NON_LIFE_INSURANCE = 'non_life_insurance';
+    const NON_LIFE_INSURANCE = 'guess_non_life_insurance';
 }
