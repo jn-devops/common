@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.5 - 2025-02-22
+
+add balance payment to assert
+
 ## #v1.5.4 - 2025-02-22
 
 add array_when function, add assert balance down payment
