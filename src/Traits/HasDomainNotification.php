@@ -70,6 +70,11 @@ trait HasDomainNotification
 //        $allowedChannels = $config['allowed'] ?? [];
 //
 //        return array_intersect($mergedChannels, $allowedChannels);
+
+        logger(config('notifications.channels.allowed'));
+        logger(config('notifications.channels.default'));
+        logger(self::class);
+        logger(config('notifications.channels')[self::class]);
         $channels = array_intersect(array_unique(array_merge(config('notifications.channels.default'), config('notifications.channels')[self::class])), config('notifications.channels.allowed'));
         logger('HasDomainNotification@getNotificationChannelsVia');
         logger($channels);
