@@ -55,20 +55,25 @@ trait HasDomainNotification
      */
     public function getNotificationChannelsVia(object $notifiable): array
     {
-        $config = config('notifications.channels');
+//        $config = config('notifications.channels');
+//
+//        // Retrieve default channels
+//        $defaultChannels = $config['default'] ?? [];
+//
+//        // Retrieve specific channels for this notification class
+//        $specificChannels = $config[self::class] ?? [];
+//
+//        // Merge and remove duplicates
+//        $mergedChannels = array_unique(array_merge($defaultChannels, $specificChannels));
+//
+//        // Filter out any channels that are not allowed
+//        $allowedChannels = $config['allowed'] ?? [];
+//
+//        return array_intersect($mergedChannels, $allowedChannels);
+        $channels = array_intersect(array_unique(array_merge(config('notifications.channels.default'), config('notifications.channels')[self::class])), config('notifications.channels.allowed'));
+        logger('HasDomainNotification@getNotificationChannelsVia');
+        logger($channels);
 
-        // Retrieve default channels
-        $defaultChannels = $config['default'] ?? [];
-
-        // Retrieve specific channels for this notification class
-        $specificChannels = $config[self::class] ?? [];
-
-        // Merge and remove duplicates
-        $mergedChannels = array_unique(array_merge($defaultChannels, $specificChannels));
-
-        // Filter out any channels that are not allowed
-        $allowedChannels = $config['allowed'] ?? [];
-
-        return array_intersect($mergedChannels, $allowedChannels);
+        return $channels;
     }
 }
