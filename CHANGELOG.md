@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.6 - 2025-02-25
+
+add logs to getNotificationChannelsVia
+
 ## #v1.5.5 - 2025-02-22
 
 add balance payment to assert
