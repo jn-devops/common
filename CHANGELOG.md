@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.8 - 2025-02-25
+
+self to static
+
 ## #v1.5.7 - 2025-02-25
 
 add logs in get notification channels via
