@@ -51,3 +51,8 @@ test('resolveOptionalCollection works', function () {
     $result = resolveOptionalCollection(Optional::create());
     expect($result)->toBeCollection()->toBeEmpty();
 });
+
+test('convertNumberToWords works', function () {
+    $result = convertNumberToWords(111.25);
+    expect($result)->toBe('ONE HUNDRED ELEVEN AND 25/100');
+});

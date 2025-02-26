@@ -154,3 +154,47 @@ if (!function_exists('array_when')) {
     });
 // $result remains [1, 2, 3]
 }
+
+if (!function_exists('convertNumberToWords')) {
+    function convertNumberToWords($number, $isFraction = true, $postfix = '')
+    {
+        if ($number != '' && $number != 0) {
+            if ($isFraction) {
+                if (fmod($number, 1) == 0) {
+                    // If the number is an integer
+                    return strtoupper(\NumberFormatter::create('en', \NumberFormatter::SPELLOUT)
+                            ->format((int)$number)) . $postfix;
+                } else {
+                    // If the number has a fractional part
+                    return strtoupper(\NumberFormatter::create('en', \NumberFormatter::SPELLOUT)
+                            ->format((int)$number))
+                        . ' AND '
+                        . str_pad((int)round(($number - (int)$number) * 100), 2, '0', STR_PAD_LEFT)
+                        . '/100'
+                        . $postfix;
+                }
+            } else {
+                $formatter = new \NumberFormatter('en', \NumberFormatter::SPELLOUT);
+
+                if (strpos($number, '.') !== false) {
+                    $parts = explode('.', $number);
+                    $wholePart = $formatter->format($parts[0]);
+
+                    // Check if the fractional part is not zero
+                    if ((int)$parts[1] !== 0) {
+                        $fractionalPart = $formatter->format($parts[1]);
+                        return $wholePart . ' AND ' . $fractionalPart;
+                    }
+
+                    // If the fractional part is zero, return only the whole part
+                    return $wholePart . $postfix;
+                }
+
+                // For whole numbers, convert directly
+                return $formatter->format($number) . $postfix;
+            }
+        } else {
+            return '';
+        }
+    }
+}
