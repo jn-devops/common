@@ -59,4 +59,8 @@ class Assert
     const MRI_SRI = 'guess_mri_sri';
 
     const NON_LIFE_INSURANCE = 'guess_non_life_insurance';
+
+    const DISCOUNT_AMOUNT = 'discount_amount';
+
+    const NET_TCP = 'net_total_contract_price';
 }

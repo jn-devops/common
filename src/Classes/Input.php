@@ -59,4 +59,6 @@ class Input
     const ANNUAL_FIRE_INSURANCE = 'annual_fire_insurance';
 
     const INCOME_REQUIREMENT_MULTIPLIER = 'income_requirement_multiplier';
+
+    const PERCENT_DISCOUNT = 'percent_discount';
 }

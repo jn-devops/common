@@ -126,9 +126,20 @@ if (!function_exists('resolveOptionalCollection')) {
      */
     function resolveOptionalCollection(DataCollection|Optional|null $collection): \Illuminate\Support\Collection
     {
-        return $collection && !($collection instanceof Optional)
-            ? $collection->toCollection()
-            : collect();
+        if (is_array($collection)) {
+            return collect($collection);
+        }
+
+        if ($collection instanceof DataCollection) {
+            return $collection->toCollection();
+        }
+
+        // For Optional or null, return an empty collection.
+        return collect();
+
+//        return $collection && !($collection instanceof Optional)
+//            ? $collection->toCollection()
+//            : collect();
     }
 }
 
