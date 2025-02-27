@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.92 - 2025-02-27
+
+add percent_discount, net_tcp, discount_amount
+
 ## #v1.5.91 - 2025-02-27
 
 add percent_discount, net_tcp, discount_amount
