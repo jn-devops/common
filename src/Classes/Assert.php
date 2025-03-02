@@ -12,13 +12,13 @@ class Assert
 
     const CASH_OUT = 'guess_cash_out_amount';
 
-    const ADD_ON_FEES_TO_LOAN_AMORTIZATION = 'guess_add_on_fees_to_loan_amortization';
-
     const BALANCE_CASH_OUT = 'guess_balance_cash_out_amount';
 
     const BALANCE_PAYMENT = 'guess_balance_payment';
 
     const LOAN_AMORTIZATION = 'guess_loan_amortization_amount';
+
+    const ADD_ON_FEES_TO_PAYMENT = 'guess_add_on_fees_to_payment';
 
     const DOWN_PAYMENT = 'guess_down_payment_amount';
 
@@ -63,6 +63,4 @@ class Assert
     const DISCOUNT_AMOUNT = 'discount_amount';
 
     const NET_TCP = 'net_total_contract_price';
-
-    const TOTAL_ADD_ON_FEES = 'total_add_on_fees';
 }
