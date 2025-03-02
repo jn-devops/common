@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.93 - 2025-03-02
+
+add total add on fees and retention fee
+
 ## #v1.5.92 - 2025-02-27
 
 add percent_discount, net_tcp, discount_amount
