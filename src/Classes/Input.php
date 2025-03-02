@@ -58,6 +58,8 @@ class Input
 
     const ANNUAL_FIRE_INSURANCE = 'annual_fire_insurance';
 
+    const ANNUAL_RETENTION_FEE = 'annual_retention_fee';
+
     const INCOME_REQUIREMENT_MULTIPLIER = 'income_requirement_multiplier';
 
     const PERCENT_DISCOUNT = 'percent_discount';

@@ -63,4 +63,6 @@ class Assert
     const DISCOUNT_AMOUNT = 'discount_amount';
 
     const NET_TCP = 'net_total_contract_price';
+
+    const TOTAL_ADD_ON_FEES = 'total_add_on_fees';
 }
