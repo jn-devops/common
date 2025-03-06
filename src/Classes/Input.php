@@ -63,4 +63,6 @@ class Input
     const INCOME_REQUIREMENT_MULTIPLIER = 'income_requirement_multiplier';
 
     const PERCENT_DISCOUNT = 'percent_discount';
+
+    const WAIVED_PROCESSING_FEE = 'waived_processing_fee';
 }
