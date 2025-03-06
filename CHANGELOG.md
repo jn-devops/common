@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.95 - 2025-03-06
+
+waived processing fee
+
 ## #v1.5.94 - 2025-03-02
 
 rename add on fees to amortization to payment
