@@ -2,6 +2,10 @@
 
 All notable changes to `common` will be documented in this file.
 
+## #v1.5.94 - 2025-03-02
+
+rename add on fees to amortization to payment
+
 ## #v1.5.93 - 2025-03-02
 
 add total add on fees and retention fee
