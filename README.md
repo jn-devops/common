@@ -1,72 +1,207 @@
 # Homeful Common Package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/jn-devops/common.svg?style=flat-square)](https://packagist.org/packages/jn-devops/common)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jn-devops/common/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jn-devops/common/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jn-devops/common/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/jn-devops/common/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/jn-devops/common.svg?style=flat-square)](https://packagist.org/packages/jn-devops/common)
+The `Homeful\Common` package is a utility package that contains reusable helpers, constants, enumerations, and abstract types used across the Homeful system. It aims to promote consistency and reduce duplication of logic in other domain-specific packages such as Mortgage, Payment, Property, and Borrower.
 
-Common tools to Homeful packages.
+---
 
-## Installation
+## 📦 Contents
 
-You can install the package via composer:
+- **Utilities**
+- **Classes**
+- **Enumerations**
 
-```bash
-composer require jn-devops/common
-```
+---
 
-You can publish the config file with:
+## 🧰 Utilities
 
-```bash
-php artisan vendor:publish --tag="common-config"
-```
-
-This is the contents of the published config file:
+### `documents_path(?string $path = null): string`
+Returns the path to the `/resources/documents` directory.
 
 ```php
-return [
+documents_path(); // /resources/documents
+documents_path('legal/contract.pdf'); // /resources/documents/legal/contract.pdf
+```
+
+---
+
+### `formatted_age(DateTime $born, ?DateTime $reference = null): string`
+Returns a human-readable age string based on birthdate.
+
+```php
+formatted_age(new DateTime('1990-05-23')); // "33 years, 10 months and 3 days old"
+```
+
+---
+
+### `doc_stamps(mixed $value): float`
+Returns the documentary stamp fee based on property value.
+
+```php
+doc_stamps(450000); // 50.0
+```
+
+---
+
+### `filter_trim_recursive_array(array $array): array`
+Trims strings and filters empty values recursively in nested arrays.
+
+---
+
+### `dot_shift(&$dot_notation): string`
+Shifts off the first key in a dot notation string.
+
+```php
+$key = dot_shift($dot = "property.name"); // $key = "property", $dot = "name"
+```
+
+---
+
+### `titleCase(?string $text, array $exclusions = []): string`
+Applies `Str::title()` but preserves Roman numerals and exceptions.
+
+```php
+titleCase('juan dela cruz ii'); // Juan Dela Cruz II
+```
+
+---
+
+### `validateJson(string $json): bool`
+Returns true if a valid JSON string.
+
+---
+
+### `resolveOptionalCollection(DataCollection|Optional|null $collection): Collection`
+Handles resolution of Spatie `DataCollection` and `Optional`.
+
+---
+
+### `array_when(array $array, $condition, callable $callback): array`
+Conditionally apply a transformation on an array.
+
+```php
+array_when([1,2,3], false, fn($arr) => array_map(fn($x) => $x * 2, $arr)); // [1,2,3]
+```
+
+---
+
+### `convertNumberToWords(float $value): string`
+Converts a float value to words.
+
+```php
+convertNumberToWords(1500.75); // ONE THOUSAND FIVE HUNDRED AND 75/100
+```
+
+---
+
+## 📚 Core Classes
+
+### `Homeful\Common\Classes\Input`
+
+A collection of constants used for data keys in form input and parameter arrays. Examples include:
+
+- `Input::TCP` - Total Contract Price
+- `Input::PERCENT_DP` - Percent Down Payment
+- `Input::BP_TERM` - Balance Payment Term
+
+Usage:
+
+```php
+$params = [
+    Input::TCP => 2500000,
+    Input::PERCENT_DP => 0.05,
 ];
 ```
 
-Optionally, you can publish the views using
+---
 
-```bash
-php artisan vendor:publish --tag="common-views"
-```
+### `Homeful\Common\Classes\Assert`
 
-## Usage
+A collection of constants used to assert derived or calculated values in computations:
+
+- `Assert::LOAN_AMOUNT`
+- `Assert::INCOME_REQUIREMENT`
+- `Assert::LOAN_AMORTIZATION`
+
+Used commonly in unit tests:
 
 ```php
-use Homeful\Common\Traits\HasPackageFactory;
-
-class HomefulModel extends Model
-{
-    use HasPackageFactory;
+expect($mortgage->getLoan()->getPrincipal()->inclusive()->compareTo($params[Assert::LOAN_AMOUNT]))->toBe(Amount::EQUAL);
 ```
 
-## Testing
+---
 
-```bash
-composer test
+## 🧮 AmountCollectionItem
+
+Base class representing any item with:
+
+- a name
+- a `Price` value
+- deductible flag
+- a tag
+
+Used as a base for:
+
+- `AddOnFeeToPayment`
+- `DeductibleFeeFromPayment`
+
+---
+
+## 📈 Enumerations
+
+### `UploadFile`
+Maps file-related attributes to suffixes for Media Library collections.
+
+```php
+UploadFile::Image->suffix(); // 'images'
+UploadFile::deriveCollectionNameFromAttribute('propertyImage'); // 'property-images'
 ```
 
-## Changelog
+---
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+### `WorkArea`
+Represents whether a user operates in a Highly Urbanized City or Region.
 
-## Contributing
+```php
+WorkArea::fromRegional(true); // WorkArea::REGION
+WorkArea::default(); // WorkArea::HUC
+```
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+---
 
-## Security Vulnerabilities
+## ✅ Example Usage
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+```php
+use Homeful\Common\Classes\Input;
+use Homeful\Common\Classes\Assert;
 
-## Credits
+$params = [
+    Input::TCP => 2500000,
+    Input::PERCENT_DP => 0.05,
+    Assert::LOAN_AMOUNT => 2375000.0,
+];
 
-- [Lester B. Hurtado](https://github.com/jn-devops)
-- [All Contributors](../../contributors)
+expect($params[Assert::LOAN_AMOUNT])->toBe(2375000.0);
+```
 
-## License
+---
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+## 📂 Path Resolution
+
+```php
+documents_path('mortgage/terms.pdf'); 
+// => /resources/documents/mortgage/terms.pdf
+```
+
+---
+
+## 🧪 Testing Helpers
+
+Used extensively in test scripts to:
+
+- Assert expected results via `Assert`
+- Pass parameters using `Input`
+- Use `formatted_age`, `doc_stamps`, etc.
+
+---
+
+Behold, a new you awaits. ✨
